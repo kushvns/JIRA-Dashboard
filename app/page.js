@@ -153,7 +153,7 @@ export default function Dashboard() {
   useEffect(() => { load(); }, []);
   const jiraBase = "https://rategain.atlassian.net";
   return <main>
-    <header className="topbar"><div className="brand"><div className="logo">RG</div><div><b>Jira Operations</b><span>SE & IN Team Performance</span></div></div><div className="live"><i /> Live Jira data</div></header>
+    <header className="topbar"><div className="brand"><div className="logo">RG</div><div><b>IT JIRA Ticket Dashboard</b><span>SE & IN Team Performance</span></div></div><div className="live"><i /> Live Jira data</div></header>
     <div className="shell">
       <section className="title-row"><div><p className="eyebrow">Service Requests · Incident Request</p><h1>IT JIRA Ticket 7-Days</h1><p>{data ? `${new Date(data.reportingStart).toLocaleDateString("en-IN")} – ${new Date(data.reportingEnd).toLocaleDateString("en-IN")} · ${data.timezone}` : "Loading reporting window…"}</p></div><button className="refresh" onClick={load} disabled={loading}>{loading ? "Refreshing…" : "↻ Refresh live data"}</button></section>
       <nav className="tabs">{tabs.map((tab) => <button key={tab} className={active === tab ? "active" : ""} onClick={() => setActive(tab)}>{tab}</button>)}</nav>
