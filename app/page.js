@@ -155,7 +155,7 @@ export default function Dashboard() {
   return <main>
     <header className="topbar"><div className="brand"><div className="logo">RG</div><div><b>Jira Operations</b><span>SE & IN Team Performance</span></div></div><div className="live"><i /> Live Jira data</div></header>
     <div className="shell">
-      <section className="title-row"><div><p className="eyebrow">Service Requests · Incident Request</p><h1>7-Day Team Performance</h1><p>{data ? `${new Date(data.reportingStart).toLocaleDateString("en-IN")} – ${new Date(data.reportingEnd).toLocaleDateString("en-IN")} · ${data.timezone}` : "Loading reporting window…"}</p></div><button className="refresh" onClick={load} disabled={loading}>{loading ? "Refreshing…" : "↻ Refresh live data"}</button></section>
+      <section className="title-row"><div><p className="eyebrow">Service Requests · Incident Request</p><h1>IT JIRA Ticket 7-Days</h1><p>{data ? `${new Date(data.reportingStart).toLocaleDateString("en-IN")} – ${new Date(data.reportingEnd).toLocaleDateString("en-IN")} · ${data.timezone}` : "Loading reporting window…"}</p></div><button className="refresh" onClick={load} disabled={loading}>{loading ? "Refreshing…" : "↻ Refresh live data"}</button></section>
       <nav className="tabs">{tabs.map((tab) => <button key={tab} className={active === tab ? "active" : ""} onClick={() => setActive(tab)}>{tab}</button>)}</nav>
       {error && <section className="error"><b>Dashboard could not load Jira data.</b><span>{error}</span><button onClick={load}>Try again</button></section>}
       {loading && !data && <section className="loading"><i /><h2>Loading fresh Jira data</h2><p>Reading only SE and IN tickets for the selected team.</p></section>}
