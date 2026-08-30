@@ -113,7 +113,7 @@ function Tickets({ data, jiraBase }) {
     const search = query.toLowerCase();
     return (!search || `${issue.key} ${issue.summary} ${issue.assignee}`.toLowerCase().includes(search))
       && (project === "ALL" || issue.project === project)
-      && (status === "ALL" || (status === "OPEN" ? issue.open : issue.resolvedInWindow));
+      && (   status === "ALL" ||   (     status === "OPEN"       ? issue.open && issue.createdInWindow       : issue.resolvedInWindow   ) );
   }), [data.issues, query, project, status]);
   const exportCsv = () => {
     const header = ["Key", "Summary", "Project", "Assignee", "Status", "Priority", "Created", "Resolved", "SLA Breached"];
