@@ -77,7 +77,7 @@ function Overview({ data }) {
       <Kpi label="Closed / resolved" value={data.totals.resolved} note="Resolved in last 7 days" tone="green" />
       <Kpi label="Current open" value={data.totals.open} note="SE + IN current backlog" tone="amber" />
       <Kpi label="SLA breached" value={data.totals.breached} note="Actual Jira SLA fields" tone="red" />
-      <Kpi label="SLA compliance" value={data.totals.slaCompliance === null ? "N/A" : `${data.totals.slaCompliance}%`} note="Completed SLA cycles" tone="violet" />
+      <Kpi label="SLA compliance" value={data.totals.slaCompliance === null ? "N/A" : `${data.totals.slaCompliance}%`} note="Resolved in last 7 days · SE + IN only" tone="violet" />
       <Kpi label="Avg. time / closed ticket" value={formatHours(data.totals.averageResolutionHours)} note="Created to resolution" tone="slate" />
     </section>
     <section className="scope-card">
