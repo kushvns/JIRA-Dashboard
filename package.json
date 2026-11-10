@@ -1,15 +1,15 @@
 {
-  "name": "jira-se-in-team-dashboard",
+  "name": "jira-it-ticket-dashboard",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+  "description": "IT ticket dashboard for Jira projects SE and IN. Static frontend plus Vercel serverless functions that fetch live data from Jira on every page load.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
   },
-  "dependencies": {
-    "next": "15.5.24" ,
-    "react": "19.1.1",
-    "react-dom": "19.1.1"
-  }
+  "scripts": {
+    "dev": "vercel dev",
+    "test": "node --test"
+  },
+  "license": "UNLICENSED"
 }
